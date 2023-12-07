@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" type="module"></script>
+  <title>Minesweeper</title>
+</head>
+<body>
+
+    <h3 class="title">Minesweeper</h3>
+  <div class="subtext">
+    Mines Left: <span data-mine-count></span>
+  </div>
+  <div class="board">
+    <div class="rules">
+      <h3>-: Game Rules :-</h3>
+      <ul>
+        <li>Uncover all squares without hitting mines.</li>
+        <li>Numbers indicate nearby mines.</li>
+        <li>Click to uncover squares; avoid mines.</li>
+        <li>Mark suspected mine locations.</li>
+        <li>To Win uncover all non-mine squares.</li>
+        <li>Hit a mine, and the game is lost.</li>
+      </ul>
+      <h2>Choose Your Difficulty Level: </h2>
+    </div>
+  </div>
+  <div class="btns">
+    <button class="Beginner" style="background-color: cornflowerblue;">Beginner</button>
+    <button class="Intermidiate" style="background-color: rgb(231, 218, 34);">Intermidiate</button>
+    <button class="Expert" style="background-color: rgb(224, 59, 59);">Expert</button>
+  </div>
+  <button class="Restart" style="background-color: forestgreen;">Restart</button>
+</body>
+</html>

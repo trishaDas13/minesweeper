@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding-inline-start: 0;
+  box-sizing: border-box;
+}
+  
+body {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  flex-direction: column;
+  background-image: url(./bg.jpeg); 
+  padding-bottom: 2rem;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.title {
+  margin: 20px;
+  color: rgb(255, 176, 204);
+  font-size: 48px;
+  font-family: 'Acme', sans-serif;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-shadow: 2px 2px 10px #00000088;
+}
+
+.subtext {
+  padding: 0.5rem 2rem;
+  background-color: rgba(240, 248, 255, 0.521);
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 10px #000000;
+  box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.75);
+  text-align: center;
+  display: none;
+}
+.subtext > span{
+  color: rgb(0, 0, 0);
+}
+
+.board {
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(var(--size), 30px);
+  grid-template-rows: repeat(var(--size), 30px);
+  gap: 6px;
+  background-color: #ffffffaf;
+  border-radius: 20px;
+}
+.rules{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 15px;
+}
+.board > *{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+.board > [data-status="hidden"] {
+  background-color: rgb(62, 91, 179);
+  border-bottom: 4px solid rgb(7, 20, 59);
+  border-right: 2px solid rgb(12, 33, 95);
+  cursor: pointer;
+}
+
+.board > [data-status="mine"] {
+  background-color: rgb(241, 38, 38);
+  border-bottom: 4px solid #7e2c29;
+  border-right: 2px solid rgb(141, 39, 39);
+}
+
+.board > [data-status="number"] {
+  background-color: #f8e3bc;
+  border-bottom: 4px solid #db9872;
+  border-right: 2px solid #ffb285;
+  padding: 0.5rem;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  transform: translateZ(0);
+  transition: filter .2s;
+  background-color: none;
+}
+
+.board > [data-status="marked"] {
+  background-color: yellow;
+  border-bottom: 4px solid #888627;
+  border-right: 2px solid rgb(163, 155, 42);
+}
+
+button {
+  touch-action: manipulation;
+  all: unset;
+  position: relative;
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: rgba(245, 245, 245, 0.897);
+  box-shadow: inset 0 -4px 8px #87bfd8, 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  color: black;
+  transition: transform 0.4s cubic-bezier(0.55, 1, 0.15, 1);
+  will-change: transform;
+  font-weight: 600;
+}
+button:active {
+  transform: scale(0.92);
+}
+button:active::after {
+  opacity: 1;
+}
+button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-image-source: url("https://csspro.com/css-3d-buttons/buttons-img/mario-button-borders.webp");
+  border-image-slice: 50%;
+  border-image-width: 40px;
+  border-style: solid;
+  transform: scale(1.04, 1.08);
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.55, 1, 0.15, 1);
+  will-change: transform;
+
+}
+button:focus-visible::after {
+  opacity: 1;
+  animation: pulsate-16 1s infinite;
+}
+
+@keyframes pulsate-16 {
+  0% {
+    transform: scale(1.04, 1.08);
+  }
+  50% {
+    transform: scale(1.08, 1.12);
+  }
+  100% {
+    transform: scale(1.04, 1.08);
+  }
+}
+.Restart{
+  width: 350px;
+  color: white;
+  margin: 1rem;
+  text-align: center;
+}
+.btns{
+  width: 350px;
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
